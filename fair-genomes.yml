@@ -431,11 +431,48 @@ modules:
       relationWith:
         - module: Personal
           relation: HSO:0000242 [http://purl.obolibrary.org/obo/HSO_0000242]
+        - module: Material
+          relation: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
       elements:
         - name: Block identifier
           description: A unique proper name or character sequence that identifies this fixed block.
-          ontology: NCIT:C93400 [http://purl.obolibrary.org/obo/NCIT_C93400]
+          ontology: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
           values: UniqueID
+        - name: Belongs to material
+          description: Reference to the source material from which this sample was prepared.
+          ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+          values: ReferenceOne [Material]
+        - name: Name of Fixative
+          description: The name of the compound that preserves tissues and cells for microscopic study.
+          ontology: NCIT:C128948 [http://purl.obolibrary.org/obo/NCIT_C128948]
+          values: LookupOne [lookups/Fixatives.txt]
+        - name: Embedding Medium
+          description: A material that infiltrates and supports a specimen and preserves its shape and structure for sectioning and microscopy.
+          ontology: NCIT:C113307 [http://purl.obolibrary.org/obo/NCIT_C113307]
+          values: LookupOne [lookups/Embeddings.txt]
+    - name: Container
+      description: A physical object designed to hold, support, or preserve a biological specimen or its derivative during collection, processing, storage, or analysis.
+      ontology: SNOMED:706437002 [http://snomed.info/id/706437002]
+      relationWith:
+        - module: Material
+          relation: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
+      elements:
+        - name: Container identifier
+          description: A unique proper name or character sequence that identifies this container.
+          ontology: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
+          values: UniqueID
+        - name: Belongs to material
+          description: Reference to the source material from which this sample was prepared.
+          ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+          values: ReferenceOne [Material]
+        - name: Source Block Identifier
+          description: A reference to the unique identifier of the fixed tissue block from which the section or sample placed in this container was derived.
+          ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
+          values: ReferenceOne [Fixed Block]
+        - name: Container Type
+          description: The physical form or subtype of the container used to hold or support the specimen, such as a tissue cassette, microscope slide, specimen vial, or electron microscopy grid.
+          ontology:
+          values: LookupOne [lookups/ContainerType.txt]
     - name: Sample preparation
       description: A sample preparation for a nucleic acids sequencing assay.
       ontology: OBI:0001902 [http://purl.obolibrary.org/obo/OBI_0001902]
