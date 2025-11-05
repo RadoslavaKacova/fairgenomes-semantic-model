@@ -445,19 +445,19 @@ modules:
         - name: Name of Fixative
           description: The name of the compound that preserves tissues and cells for microscopic study.
           ontology: NCIT:C128948 [http://purl.obolibrary.org/obo/NCIT_C128948]
-          values: LookupOne [lookups/Fixatives.txt]
+          values: LookupOne [lookups/Fixatives.txt], ofType [http://edamontology.org/topic_3391]
         - name: Embedding Medium
           description: A material that infiltrates and supports a specimen and preserves its shape and structure for sectioning and microscopy.
           ontology: NCIT:C113307 [http://purl.obolibrary.org/obo/NCIT_C113307]
-          values: LookupOne [lookups/Embeddings.txt]
-    - name: Container
+          values: LookupOne [lookups/Embeddings.txt], ofType [http://edamontology.org/topic_3391]
+    - name: Slide Container
       description: A physical object designed to hold, support, or preserve a biological specimen or its derivative during collection, processing, storage, or analysis.
       ontology: SNOMED:706437002 [http://snomed.info/id/706437002]
       relationWith:
         - module: Material
           relation: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
       elements:
-        - name: Container identifier
+        - name: Slide Container identifier
           description: A unique proper name or character sequence that identifies this container.
           ontology: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
           values: UniqueID
@@ -470,9 +470,72 @@ modules:
           ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
           values: ReferenceOne [Fixed Block]
         - name: Container Type
-          description: The physical form or subtype of the container used to hold or support the specimen, such as a tissue cassette, microscope slide, specimen vial, or electron microscopy grid.
+          description: The specific subclass or category of physical container used to hold or support the specimen. This field classifies the container according to its type, e.g., microscope slide, tissue cassette, or specimen vial.
+          ontology: SNOMED:706437002 [http://snomed.info/id/706437002]
+          values: LookupOne [lookups/ContainerType.txt], ofType [http://edamontology.org/topic_3391]
+        - name: Section Thickness
+          description: A measurement of the thickness of a sectioned slice (of tissue or mineral or other substance), expressed in micrometers (µm).
+          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
+          values: Integer
+        - name: Cell Type #container
+          description:
           ontology:
-          values: LookupOne [lookups/ContainerType.txt]
+          values:
+        - name: Tissue Type #container
+          description:
+          ontology:
+          values:
+    - name: Slide Preparation Assay
+      description: A planned laboratory process performed on a slide container with the objective of generating information about the specimen, such as through histological or immunohistochemical staining.
+      ontology: OBI:0000070 [http://purl.obolibrary.org/obo/OBI_0000070]
+      relationWith:
+        - module: Slide Container
+          relation: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
+      elements:
+        - name: Assay identifier
+          description: An assay identifier is an identifier that identifies some assay (analysis).
+          ontology: AFR:0001979 [http://purl.allotrope.org/ontologies/result#AFR_0001979]
+          values: UniqueID
+        - name: Has input slide container
+          description: Reference to the slide container that served as input material for this assay. The slide contains the specimen section on which the assay was performed.
+          ontology: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
+          values: ReferenceOne [Slide Container]
+        - name: Assay Type
+          description: The specific type of laboratory test or analytical procedure performed on a bio-specimen mounted on a glass slide. It defines the staining or labeling technique applied to the specimen to reveal specific structural, molecular, or cellular features.
+          ontology: NCIT:C189101 [http://purl.obolibrary.org/obo/NCIT_C189101]
+          values: LookupOne [lookups/AssayType.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C23043]
+        - name: Biomarker Type
+          description: A classification of the type of biomolecule or biological component that the assay targets, labels, or detects. It characterizes whether the biomarker is, for example, a protein, nucleic acid, carbohydrate, lipid, or inorganic substance.
+          ontology: NCIT:C201359 [http://purl.obolibrary.org/obo/NCIT_C201359]
+          values: LookupOne [lookups/BiomarkerTypeMicro.txt], ofType [http://purl.obolibrary.org/obo/OPMI_0000452]
+        - name: Biomarker Spatial Localization
+          description: The subcellular or structural location within a tissue or cell where the biomarker is expressed or detected.
+          ontology: GO:0051641 [http://purl.obolibrary.org/obo/GO_0051641]
+          values: LookupOne [lookups/BiomarkerSpatialLocalization.txt], ofType [http://purl.obolibrary.org/obo/GO_0110165]
+        - name: Pathogen Type
+          description:
+          ontology:
+          values:
+        - name: Counter Labeling
+          description:
+          ontology:
+          values:
+        - name: Special Stain Technique
+          description:
+          ontology:
+          values:
+        - name: Dye Name
+          description:
+          ontology:
+          values:
+        - name: Antibody Name
+          description:
+          ontology:
+          values:
+        - name: Antibody Identifier
+          description:
+          ontology:
+          values:
     - name: Sample preparation
       description: A sample preparation for a nucleic acids sequencing assay.
       ontology: OBI:0001902 [http://purl.obolibrary.org/obo/OBI_0001902]
@@ -702,7 +765,7 @@ modules:
           description: Reference to the person whom this imaging study is about.
           ontology: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337]
           values: ReferenceOne [Personal]
-        - name: Imaging Technique (Modality)
+        - name: Imaging Technique
           description: Any technology or method that aids in the visualization of any biological process, cell, tissue or organ for use in screening, diagnosis, surgical procedures or therapy.
           ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
           values: LookupMany [lookups/Modality.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C17369]
@@ -753,7 +816,7 @@ modules:
           description: The number of DICOM instances in the imaging study.
           ontology: NCIT:C164540 [http://purl.obolibrary.org/obo/NCIT_C164540]
           values: Integer
-        - name: Imaging Technique (Modality)
+        - name: Imaging Technique
           description: Any technology or method that aids in the visualization of any biological process, cell, tissue or organ for use in screening, diagnosis, surgical procedures or therapy.
           ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
           values: LookupMany [lookups/Modality.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C17369]
@@ -785,7 +848,7 @@ modules:
           description: A form or variant of software; one of a sequence of copies of a software program, each incorporating new modifications.
           ontology: NCIT:C111093 [http://purl.obolibrary.org/obo/NCIT_C111093]
           values: LookupOne [lookups/ImagingDeviceSoftwareVersion.txt], ofType [http://snomed.info/id/706687001]
-    - name: Image Instance
+    - name: Imaging Instance
       description: Any record of an imaging event whether physical or electronic.
       ontology: NCIT:C48179 [http://purl.obolibrary.org/obo/NCIT_C48179]
       relationWith:
@@ -794,7 +857,7 @@ modules:
         - module: Imaging Series
           relation: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
       elements:
-        - name: Image Instance Identifier
+        - name: Imaging Instance Identifier
           description: A sequence of letters, numbers, or other characters that specifically identifies a particular image.
           ontology: NCIT:C81289 [http://purl.obolibrary.org/obo/NCIT_C81289]
           values: UniqueID
@@ -806,7 +869,7 @@ modules:
           description: Reference to the parent imaging series of which this image is a part, linking the series to the overall study context.
           ontology: NCIT:C69219 [http://purl.obolibrary.org/obo/NCIT_C69219]
           values: ReferenceOne [Imaging Series]
-        - name: Image Instance Date
+        - name: Imaging Instance Date
           description: The date when this image was generated.
           ontology: NCIT:C68616 [http://purl.obolibrary.org/obo/NCIT_C68616]
           values: Date
