@@ -3,7 +3,7 @@ name: FAIR Genomes metadata schema
 description: The FAIR Genomes semantic metadata schema to power reuse of NGS data in research and healthcare.
 version: 1.3
 releaseType: SNAPSHOT
-date: 2025-10-21
+date: 2025-11-10
 lookupGlobalOptions: lookups/NullFlavors.txt
 authors:
     - name: K. Joeri van der Velde
@@ -116,7 +116,7 @@ modules:
             ontology: MESH:D005783 [http://purl.bioontology.org/ontology/MESH/D005783]
             values: LookupOne [lookups/GenderIdentity.txt], ofType [http://purl.bioontology.org/ontology/MESH/D005783]
           - name: Gender at birth
-            description:  Assigned gender is one's gender which was assigned at birth, typically by a medical and/or legal organization, and then later registered with other organizations. Such a designation is typically based off of the superficial appearance of external genitalia present at birth.
+            description: Assigned gender is one's gender which was assigned at birth, typically by a medical and/or legal organization, and then later registered with other organizations. Such a designation is typically based off of the superficial appearance of external genitalia present at birth.
             ontology: GSSO:009418 [http://purl.obolibrary.org/obo/GSSO_009418]
             values: LookupOne [lookups/GenderAtBirth.txt], ofType [http://purl.obolibrary.org/obo/GSSO_009418]
           - name: Genotypic sex
@@ -425,7 +425,54 @@ modules:
             ontology: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
             values: String #[WORK IN PROGRESS. This field should be proper ReferenceOne to Material, but this is technically problematic due to circular dependencies.]
           # values: ReferenceOne [Material]
-    - name: Fixed Block
+    - name: Imaging study
+      description: The Study IE defines the characteristics of a medical Study performed on a Patient. A Study is a collection of one or more Series of medical images, presentation states, and/or SR documents that are logically related for the purpose of diagnosing a Patient. Each Study is associated with exactly one Patient. A Study may include Composite Instances that are created by a single modality, multiple modalities or by multiple devices of the same modality. The Study IE is modality independent.
+      ontology: DICOM:113014 [http://dicom.nema.org/resources/ontology/DCM/113014]
+      relationWith:
+        - module: Patient
+          relation: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
+      elements:
+        - name: Imaging Study identifier
+          description: The user- or equipment-generated identifier of an instance of a DICOM study entity.
+          ontology: NCIT:C164493 [http://purl.obolibrary.org/obo/NCIT_C164493]
+          values: UniqueID
+        - name: Belongs to person
+          description: Reference to the person whom this imaging study is about.
+          ontology: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337]
+          values: ReferenceOne [Personal]
+        - name: Imaging Technique
+          description: Any technology or method that aids in the visualization of any biological process, cell, tissue or organ for use in screening, diagnosis, surgical procedures or therapy.
+          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
+          values: LookupMany [lookups/Modality.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C17369]
+        - name: Body Region
+          description: Named areas of the body.
+          ontology: NCIT:C12680 [http://purl.obolibrary.org/obo/NCIT_C12680]
+          values: LookupMany [lookups/AnatomicFocus.txt], ofType [http://snomed.info/id/52530000]
+        - name: Imaging Procedure
+          description: An imaging procedure as defined by SNOMED CT, representing a specific diagnostic or acquisition procedure (e.g., 'CT of breast', 'MRI of head', or 'Whole Slide Imaging'), rather than the general modality or technique alone. The general modality or technique (e.g., 'CT', 'MR', 'SM') is captured separately in the 'Imaging Technique' field.
+          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
+          values: LookupMany [lookups/ImagingProcedure.txt], ofType [http://snomed.info/id/15220000]
+        - name: Reason for Imaging Procedure
+          description: The clinical or research rationale for performing the imaging procedure. This field captures why the procedure was indicated for the patient, such as screening, diagnosis, treatment planning, or research purposes. It should express the intent or medical reason, not the technical details of the procedure itself.
+          ontology: NCIT:C69216 [http://purl.obolibrary.org/obo/NCIT_C69216]
+          values: LookupMany [lookups/ReasonForImagingProcedure.txt], ofType [http://snomed.info/id/138875005]
+        - name: Study Start Date
+          description: The date on which a study began.
+          ontology: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
+          values: Date
+        - name: DICOM Series Count
+          description: The number of DICOM series.
+          ontology: NCIT:C164492 [http://purl.obolibrary.org/obo/NCIT_C164492]
+          values: Integer
+        - name: DICOM Images Count
+          description: The number of DICOM instances in the imaging study.
+          ontology: NCIT:C164540 [http://purl.obolibrary.org/obo/NCIT_C164540]
+          values: Integer
+        - name: Affiliated Institution
+          description: The organisation or institution responsible for performing the imaging study.
+          ontology: NCIT:C25412 [http://purl.obolibrary.org/obo/NCIT_C25412]
+          values: LookupOne [lookups/Institutes.txt], ofType [http://semanticscience.org/resource/SIO_000688]
+    - name: Fixed block
       description: Refers to preserved specimens embedded in support material. These are typically cut into thin slices for microscopic examination, with or without an enhancement such as staining.
       ontology: NCIT:C25436 [http://purl.obolibrary.org/obo/NCIT_C25436]
       relationWith:
@@ -438,59 +485,59 @@ modules:
           description: A unique proper name or character sequence that identifies this fixed block.
           ontology: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
           values: UniqueID
-        - name: Belongs to material
+        - name: Source material
           description: Reference to the source material from which this sample was prepared.
           ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
           values: ReferenceOne [Material]
-        - name: Name of Fixative
+        - name: Name of fixative
           description: The name of the compound that preserves tissues and cells for microscopic study.
           ontology: NCIT:C128948 [http://purl.obolibrary.org/obo/NCIT_C128948]
-          values: LookupOne [lookups/Fixatives.txt], ofType [http://edamontology.org/topic_3391]
-        - name: Embedding Medium
+          values: LookupOne [lookups/Fixatives.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C498]
+        - name: Embedding medium
           description: A material that infiltrates and supports a specimen and preserves its shape and structure for sectioning and microscopy.
           ontology: NCIT:C113307 [http://purl.obolibrary.org/obo/NCIT_C113307]
-          values: LookupOne [lookups/Embeddings.txt], ofType [http://edamontology.org/topic_3391]
-    - name: Slide Container
+          values: LookupOne [lookups/Embeddings.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C113307]
+    - name: Slide container
       description: A physical object designed to hold, support, or preserve a biological specimen or its derivative during collection, processing, storage, or analysis.
       ontology: SNOMED:706437002 [http://snomed.info/id/706437002]
       relationWith:
-        - module: Material
+        - module: Fixed block
           relation: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
+        - module: Slide preparation assay
+          relation: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
       elements:
-        - name: Slide Container identifier
+        - name: Slide container identifier
           description: A unique proper name or character sequence that identifies this container.
           ontology: NCIT:C25364 [http://purl.obolibrary.org/obo/NCIT_C25364]
           values: UniqueID
-        - name: Belongs to material
-          description: Reference to the source material from which this sample was prepared.
+        - name: Source fixed block
+          description: Reference to the source fixed block of material from which this sample was prepared.
           ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
-          values: ReferenceOne [Material]
-        - name: Source Block Identifier
-          description: A reference to the unique identifier of the fixed tissue block from which the section or sample placed in this container was derived.
-          ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
-          values: ReferenceOne [Fixed Block]
-        - name: Container Type
+          values: ReferenceOne [Fixed block]
+        - name: Container type
           description: The specific subclass or category of physical container used to hold or support the specimen. This field classifies the container according to its type, e.g., microscope slide, tissue cassette, or specimen vial.
-          ontology: SNOMED:706437002 [http://snomed.info/id/706437002]
-          values: LookupOne [lookups/ContainerType.txt], ofType [http://edamontology.org/topic_3391]
-        - name: Section Thickness
+          ontology: SNOMED:706437002 [http://snomed.info/id/706437002] #defines only Container, not Container Type
+          values: LookupOne [lookups/ContainerType.txt], ofType [http://snomed.info/id/706437002]
+        - name: Section thickness
           description: A measurement of the thickness of a sectioned slice (of tissue or mineral or other substance), expressed in micrometers (µm).
           ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
           values: Integer
-        - name: Cell Type #container
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-        - name: Tissue Type #container
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-    - name: Slide Preparation Assay
+        - name: Cell type
+          description: A cell type is a distinct morphological or functional form of cell. Examples are epithelial, glial etc.
+          ontology: EFO:0000324 [http://www.ebi.ac.uk/efo/EFO_0000324]
+          values: LookupMany [lookups/CellType.txt], ofType [http://www.ebi.ac.uk/efo/EFO_0000324]
+        - name: Tissue type
+          description: The type of anatomical structure consisting of similarly specialized cells and intercellular matrix, aggregated according to genetically determined spatial relationships, performing a specific function.
+          ontology: NCIT:C12801 [http://purl.obolibrary.org/obo/NCIT_C12801]
+          values: LookupMany [lookups/TissueType.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C12801]
+    - name: Slide preparation assay
       description: A planned laboratory process performed on a slide container with the objective of generating information about the specimen, such as through histological or immunohistochemical staining.
       ontology: OBI:0000070 [http://purl.obolibrary.org/obo/OBI_0000070]
       relationWith:
-        - module: Slide Container
+        - module: Slide container
           relation: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
+        - module: Imaging study
+          relation: SIO:001220 [http://semanticscience.org/resource/SIO_001220]
       elements:
         - name: Assay identifier
           description: An assay identifier is an identifier that identifies some assay (analysis).
@@ -499,43 +546,47 @@ modules:
         - name: Has input slide container
           description: Reference to the slide container that served as input material for this assay. The slide contains the specimen section on which the assay was performed.
           ontology: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
-          values: ReferenceOne [Slide Container]
-        - name: Assay Type
+          values: ReferenceOne [Slide container]
+        - name: Assay type
           description: The specific type of laboratory test or analytical procedure performed on a bio-specimen mounted on a glass slide. It defines the staining or labeling technique applied to the specimen to reveal specific structural, molecular, or cellular features.
           ontology: NCIT:C189101 [http://purl.obolibrary.org/obo/NCIT_C189101]
           values: LookupOne [lookups/AssayType.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C23043]
-        - name: Biomarker Type
+        - name: Biomarker type
           description: A classification of the type of biomolecule or biological component that the assay targets, labels, or detects. It characterizes whether the biomarker is, for example, a protein, nucleic acid, carbohydrate, lipid, or inorganic substance.
           ontology: NCIT:C201359 [http://purl.obolibrary.org/obo/NCIT_C201359]
-          values: LookupOne [lookups/BiomarkerTypeMicro.txt], ofType [http://purl.obolibrary.org/obo/OPMI_0000452]
-        - name: Biomarker Spatial Localization
+          values: LookupOne [lookups/BiomarkerType.txt], ofType [http://purl.obolibrary.org/obo/OPMI_0000452]
+        - name: Biomarker spatial localization
           description: The subcellular or structural location within a tissue or cell where the biomarker is expressed or detected.
           ontology: GO:0051641 [http://purl.obolibrary.org/obo/GO_0051641]
           values: LookupOne [lookups/BiomarkerSpatialLocalization.txt], ofType [http://purl.obolibrary.org/obo/GO_0110165]
-        - name: Pathogen Type
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-        - name: Counter Labeling
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-        - name: Special Stain Technique
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-        - name: Dye Name
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-        - name: Antibody Name
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
-        - name: Antibody Identifier
-          description: TODO
-          ontology: NCIT:C176286 [http://purl.obolibrary.org/obo/NCIT_C176286]
-          values: Integer
+        - name: Pathogen type
+          description: Identification of the specific type of pathogen among the listed categories e.g. 'Virus','Viroid','Bacterium'...
+          ontology: EVORAO:pathogenType [https://w3id.org/evorao/pathogenType]
+          values: LookupOne [lookups/PathogenType.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C80324]
+        - name: Counter labeling
+          description: The counter-labeling technique used to highlight specific cellular or tissue structures, serving as a complementary method to the primary labeling for analysis
+          ontology: SNOMED:703857004 [http://snomed.info/id/703857004] #staining technique in general
+          values: LookupOne [lookups/StainTechniques.txt], ofType [http://snomed.info/id/703857004]
+        - name: Special stain technique
+          description: The method of a special staining technique performed to visualize a selected tissue type or tissue element, a cell type, or a pathogen, except for the H&E method
+          ontology: SNOMED:703857004 [http://snomed.info/id/703857004] #staining technique in general
+          values: LookupOne [lookups/StainTechniques.txt], ofType [http://snomed.info/id/703857004]
+        - name: Dye name
+          description: The neutral or synthetic colored substance used for staining specific tissues or cellular components.
+          ontology: SNOMED:703857004 [http://snomed.info/id/703857004] #staining technique in general
+          values: LookupOne [lookups/StainTechniques.txt], ofType [http://snomed.info/id/703857004]
+        - name: Antibody name
+          description: The vendor-stated name of an antibody used to detect and visualize the presence of an antigen.
+          ontology: XCO:0000194 [http://purl.obolibrary.org/obo/XCO_0000194]
+          values: LookupOne [lookups/AntibodyName.txt], ofType [http://purl.obolibrary.org/obo/XCO_0000194]
+        - name: Antibody identifier
+          description: The distinct ID for an antibody used in an assay.
+          ontology: XCO:0000194 [http://purl.obolibrary.org/obo/XCO_0000194]
+          values: LookupOne [lookups/AntibodyIdentifier.txt], ofType [http://purl.obolibrary.org/obo/XCO_0000194]
+        - name: Produces imaging study
+          description: Imaging study obtained as a result of this slide preparation assay.
+          ontology: SIO:001156 [http://semanticscience.org/resource/SIO_001156]
+          values: ReferenceOne [Imaging study]
     - name: Sample preparation
       description: A sample preparation for a nucleic acids sequencing assay.
       ontology: OBI:0001902 [http://purl.obolibrary.org/obo/OBI_0001902]
@@ -686,42 +737,6 @@ modules:
             description: Any followed systematic statement of policy rules or principles. Guidelines may be developed by government agencies at any level, institutions, professional societies, governing boards, or by convening expert panels.
             ontology: NCIT:C17564 [http://purl.obolibrary.org/obo/NCIT_C17564]
             values: String
-    - name: HMD Submission
-      description: A class specific for the 1+MG GDI project containing items for metadata submission.
-      ontology: FG:0000750 [https://w3id.org/fair-genomes/resource/FG_0000750]
-      elements:
-          - name: Submitter Role
-            description: Role of the Submitter (e.g. Oncologist in charge of the patient, Research Project PI).
-            ontology: FG:0000752 [https://w3id.org/fair-genomes/resource/FG_0000752]
-            values: String
-          - name: Data Center
-            description: Refers to the Department in charge of Data Production and/ or analysis
-            ontology: FG:0000753 [https://w3id.org/fair-genomes/resource/FG_0000753]
-            values: String
-          - name: Clinical Center
-            description: Refers to the Clinical Department in charge of the patient.
-            ontology: FG:0000754 [https://w3id.org/fair-genomes/resource/FG_0000754]
-            values: String
-          - name: Institution Clinical
-            description: Identifies the Institution/s involved.
-            ontology: FG:0000755 [https://w3id.org/fair-genomes/resource/FG_0000755]
-            values: LookupMany [lookups/InstitutesROR.txt], ofType [http://semanticscience.org/resource/SIO_000688]
-          - name: Institution Data Center
-            description: Identifies the Institution/s involved.
-            ontology: FG:0000756 [https://w3id.org/fair-genomes/resource/FG_0000756]
-            values: LookupMany [lookups/InstitutesROR.txt], ofType [http://semanticscience.org/resource/SIO_000688]
-          - name: Publication description
-            description: Linked to the instance of publication_doi; should provide a human-readably description of the publication.
-            ontology: FG:0000757 [https://w3id.org/fair-genomes/resource/FG_0000757]
-            values: String
-          - name: Collection
-            description: Identifies collection (Biobank, Collection, Cohort, other types of projects) in which data are part of.
-            ontology: FG:0000751 [https://w3id.org/fair-genomes/resource/FG_0000751]
-            values: String
-          - name: Research Consortia
-            description: Identifies Research Consortia Involved.
-            ontology: FG:0000758 [https://w3id.org/fair-genomes/resource/FG_0000758]
-            values: String
     - name: Treatment
       description: An action or administration of therapeutic agents to produce an effect that is intended to alter or stop a pathologic process.
       ontology: NCIT:C49236 [http://purl.obolibrary.org/obo/NCIT_C49236]
@@ -738,72 +753,11 @@ modules:
             description: The patients' response to the applied treatment regimen.
             ontology: SNOMEDCT:182985004 [http://purl.bioontology.org/ontology/SNOMEDCT/182985004]
             values: LookupMany [lookups/TreatmentResponse.txt], ofType [http://purl.bioontology.org/ontology/SNOMEDCT/182985004]
-    - name: Biomarker
-      description: TODO
-      ontology: NCIT:C16342 [http://purl.obolibrary.org/obo/NCIT_C16342]
-      elements:
-          - name: Type
-            description: What type is the biomarker classified as.
-            ontology: NCIT:C164707 [http://purl.obolibrary.org/obo/NCIT_C164707]
-            values: LookupMany [lookups/BiomarkerType.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C164707]
-          - name: Subtype_Molecular
-            description: Subtype of the molecular biomarker.
-            ontology: FG:0000766 [https://w3id.org/fair-genomes/resource/FG_0000766]
-            values: LookupMany [lookups/BiomarkerMolecular.txt], ofType [https://w3id.org/fair-genomes/resource/FG_0000766]
-    - name: Imaging Study
-      description: The Study IE defines the characteristics of a medical Study performed on a Patient. A Study is a collection of one or more Series of medical images, presentation states, and/or SR documents that are logically related for the purpose of diagnosing a Patient. Each Study is associated with exactly one Patient. A Study may include Composite Instances that are created by a single modality, multiple modalities or by multiple devices of the same modality. The Study IE is modality independent.
-      ontology: DICOM:113014 [http://dicom.nema.org/resources/ontology/DCM/113014]
-      relationWith:
-        - module: Patient
-          relation: RO:0000056 [http://purl.obolibrary.org/obo/RO_0000056]
-      elements:
-        - name: Imaging Study identifier
-          description: The user- or equipment-generated identifier of an instance of a DICOM study entity.
-          ontology: NCIT:C164493 [http://purl.obolibrary.org/obo/NCIT_C164493]
-          values: UniqueID
-        - name: Belongs to person
-          description: Reference to the person whom this imaging study is about.
-          ontology: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337]
-          values: ReferenceOne [Personal]
-        - name: Imaging Technique
-          description: Any technology or method that aids in the visualization of any biological process, cell, tissue or organ for use in screening, diagnosis, surgical procedures or therapy.
-          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
-          values: LookupMany [lookups/Modality.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C17369]
-        - name: Body Region
-          description: Named areas of the body.
-          ontology: NCIT:C12680 [http://purl.obolibrary.org/obo/NCIT_C12680]
-          values: LookupMany [lookups/AnatomicFocus.txt], ofType [http://snomed.info/id/52530000]
-        - name: Imaging Procedure
-          description: An imaging procedure as defined by SNOMED CT, representing a specific diagnostic or acquisition procedure (e.g., 'CT of breast', 'MRI of head', or 'Whole Slide Imaging'), rather than the general modality or technique alone. The general modality or technique (e.g., 'CT', 'MR', 'SM') is captured separately in the 'Imaging Technique' field.
-          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
-          values: LookupMany [lookups/ImagingProcedure.txt], ofType [http://snomed.info/id/15220000]
-        - name: Reason for Imaging Procedure
-          description: The clinical or research rationale for performing the imaging procedure. This field captures why the procedure was indicated for the patient, such as screening, diagnosis, treatment planning, or research purposes. It should express the intent or medical reason, not the technical details of the procedure itself.
-          ontology: NCIT:C69216 [http://purl.obolibrary.org/obo/NCIT_C69216]
-          values: LookupMany [lookups/ReasonForImagingProcedure.txt], ofType [http://snomed.info/id/138875005]
-        - name: Study Start Date
-          description: The date on which a study began.
-          ontology: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
-          values: Date
-        - name: DICOM Series Count
-          description: The number of DICOM series.
-          ontology: NCIT:C164492 [http://purl.obolibrary.org/obo/NCIT_C164492]
-          values: Integer
-        - name: DICOM Images Count
-          description: The number of DICOM instances in the imaging study.
-          ontology: NCIT:C164540 [http://purl.obolibrary.org/obo/NCIT_C164540]
-          values: Integer
-        - name: Affiliated Institution
-          description: The organisation or institution responsible for performing the imaging study.
-          ontology: NCIT:C25412 [http://purl.obolibrary.org/obo/NCIT_C25412]
-          values: LookupOne [lookups/Institutes.txt], ofType [http://semanticscience.org/resource/SIO_000688]
-
-
-    - name: ImagingSeries
+    - name: Imaging Series
       description: A distinct logical set used to group composite instances. All instances within a Series are of the same modality, in the same Frame of Reference (if any), and created by the same equipment.
       ontology: DICOM:113015 [http://dicom.nema.org/resources/ontology/DCM/113015]
       relationWith:
-        - module: Imaging Study
+        - module: Imaging study
           relation: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
       elements:
         - name: Series Instance UID
@@ -813,80 +767,80 @@ modules:
         - name: Belongs to Imaging Study
           description: Parent study context.
           ontology: NCIT:C164493 [http://purl.obolibrary.org/obo/NCIT_C164493]
-          values: ReferenceOne [Imaging Study]
+          values: ReferenceOne [Imaging study]
         - name: DICOM Images Count
+          description: TO DO
           ontology: NCIT:C164540 [http://purl.obolibrary.org/obo/NCIT_C164540]
           values: Integer
         - name: Imaging Technique
+          description: TO DO
           ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
           values: LookupMany [lookups/Modality.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C17369]
         - name: Imaging Procedure
+          description: TO DO
           ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
           values: LookupOne [lookups/ImagingProcedure.txt], ofType [http://snomed.info/id/15220000]
         - name: Series Start Date
+          description: TO DO
           ontology: NCIT:C68616 [http://purl.obolibrary.org/obo/NCIT_C68616]
           values: Date
         - name: Body Region
+          description: TO DO
           ontology: NCIT:C12680 [http://purl.obolibrary.org/obo/NCIT_C12680]
           values: LookupOne [lookups/AnatomicFocus.txt], ofType [http://snomed.info/id/52530000]
         - name: Laterality
+          description: TO DO
           ontology: NCIT:C25185 [http://purl.obolibrary.org/obo/NCIT_C25185]
           values: LookupOne [lookups/Laterality.txt], ofType [http://snomed.info/id/106233006]
         - name: Imaging Device
+          description: TO DO
           ontology: NCIT:C19747 [http://purl.obolibrary.org/obo/NCIT_C19747]
           values: LookupOne [lookups/ImagingDevice.txt], ofType [http://snomed.info/id/314789007]
         - name: Manufacturer of Imaging Device
+          description: TO DO
           ontology: NCIT:C25392 [http://purl.obolibrary.org/obo/NCIT_C25392]
           values: LookupOne [lookups/ManufacturerOfID.txt], ofType [http://purl.obolibrary.org/obo/OBI_0000835]
         - name: Software Version
+          description: TO DO
           ontology: NCIT:C111093 [http://purl.obolibrary.org/obo/NCIT_C111093]
           values: LookupOne [lookups/ImagingDeviceSoftwareVersion.txt], ofType [http://snomed.info/id/706687001]
-
-
     - name: Imaging Instance
       description: Any record of an imaging event whether physical or electronic.
       ontology: NCIT:C48179 [http://purl.obolibrary.org/obo/NCIT_C48179]
       relationWith:
-        - module: Imaging Study
+        - module: Imaging study
           relation: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
-        - module: ImagingSeries
+        - module: Imaging Series
           relation: SIO:000068 [http://semanticscience.org/resource/SIO_000068]
       elements:
         - name: Imaging Instance Identifier
+          description: TO DO
           ontology: NCIT:C81289 [http://purl.obolibrary.org/obo/NCIT_C81289]
           values: UniqueID
         - name: Belongs to Imaging Study
+          description: TO DO
           ontology: NCIT:C164493 [http://purl.obolibrary.org/obo/NCIT_C164493]
-          values: ReferenceOne [Imaging Study]
+          values: ReferenceOne [Imaging study]
         - name: Belongs to Imaging Series
+          description: TO DO
           ontology: NCIT:C69219 [http://purl.obolibrary.org/obo/NCIT_C69219]
-          values: ReferenceOne [ImagingSeries]
+          values: ReferenceOne [Imaging Series]
         - name: Imaging Instance Date
+          description: TO DO
           ontology: NCIT:C68616 [http://purl.obolibrary.org/obo/NCIT_C68616]
           values: Date
         - name: Image Type
+          description: TO DO
           ontology: NCIT:C69268 [http://purl.obolibrary.org/obo/NCIT_C69268]
           values: LookupOne [lookups/ImageType.txt], ofType [http://snomed.info/id/363679005]
-
-
     - name: WSI Series
-      description: Whole Slide Imaging series
+      description: Whole Slide Imaging Series
+      ontology: NCIT:C68616 [http://purl.obolibrary.org/obo/NCIT_C68616]
       subclassOf: ImagingSeries
       elements:
         - name: WSI Identifier
           description: A unique identifier for WSI series.
-          ontology: NCIT:C69219 [http://purl.obolibrary.org/obo/NCIT_C69219]
-          values: UniqueID
-
-
-    - name: CT Series
-      description: Computed Tomography imaging series
-      subclassOf: ImagingSeries
-      elements:
-        - name: CT Identifier
-          description: A unique identifier for CT series.
-          ontology: NCIT:C69219 [http://purl.obolibrary.org/obo/NCIT_C69219]
-          values: UniqueID
-
+          ontology: NCIT:C68616 [http://purl.obolibrary.org/obo/NCIT_C68616]
+          values: Integer
 
 
