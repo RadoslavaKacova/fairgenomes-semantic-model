@@ -96,7 +96,6 @@ modules:
             broadMatch: IAO:0000582 [http://purl.obolibrary.org/obo/IAO_0000582]
             relatedMatch: SIO:001083 [https://semanticscience.org/resource/SIO_001083], SIO:001314 [https://semanticscience.org/resource/SIO_001314]
             values: Date
-            # Placeholder: Add many-to-many relation of Study-Personal: ReferenceMany [Personal]
     - name: Personal
       description: Data, facts or figures about an individual; the set of relevant items would depend on the use case.
       ontology: NCIT:C90492 [http://purl.obolibrary.org/obo/NCIT_C90492]
@@ -383,10 +382,6 @@ modules:
       relationWith:
         - module: Material
           relation: RO:0001000 [http://purl.obolibrary.org/obo/RO_0001000]
-        - module: Sample preparation
-          relation: OBI:0000295 [http://purl.obolibrary.org/obo/OBI_0000295]
-        - module: Slide preparation Assay
-          relation: OBI:0000295 [http://purl.obolibrary.org/obo/OBI_0000295]
       elements:
         - name: Biospecimen identifier
           description: A unique proper name or character sequence that identifies this particular biospecimen.
@@ -441,26 +436,14 @@ modules:
           description: Reference to the person whom this imaging study is about.
           ontology: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337]
           values: ReferenceOne [Personal]
-        - name: Imaging modality
-          description: Any technology or method that aids in the visualization of any biological process, cell, tissue or organ for use in screening, diagnosis, surgical procedures or therapy.
-          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
-          values: LookupMany [lookups/Modality.txt], ofType [http://purl.bioontology.org/ontology/SNOMEDCT/360037004]
-        - name: Body region
-          description: Named areas of the body.
-          ontology: NCIT:C12680 [http://purl.obolibrary.org/obo/NCIT_C12680]
-          values: LookupMany [lookups/AnatomicFocus.txt], ofType [http://snomed.info/id/52530000]
-        - name: Imaging procedure #do we need to specify procedure on the level of study?
-          description: An imaging procedure as defined by SNOMED CT, representing a specific diagnostic or acquisition procedure (e.g., 'CT of breast', 'MRI of head', or 'Whole Slide Imaging'), rather than the general modality or technique alone. The general modality or technique (e.g., 'CT', 'MR', 'SM') is captured separately in the 'Imaging modality' field.
-          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369] #the same ontology as for Imaging modality
-          values: LookupMany [lookups/ImagingProcedure.txt], ofType [http://snomed.info/id/15220000]
-        - name: Reason for imaging procedure
-          description: The clinical or research rationale for performing the imaging procedure. This field captures why the procedure was indicated for the patient, such as screening, diagnosis, treatment planning, or research purposes. It should express the intent or medical reason, not the technical details of the procedure itself.
-          ontology: NCIT:C69216 [http://purl.obolibrary.org/obo/NCIT_C69216]
-          values: LookupMany [lookups/ReasonForImagingProcedure.txt], ofType [http://snomed.info/id/138875005]
         - name: Study start date
           description: The date on which a study began.
           ontology: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
           values: Date
+        - name: Reason for imaging procedure
+          description: The clinical or research rationale for performing the imaging procedure. This field captures why the procedure was indicated for the patient, such as screening, diagnosis, treatment planning, or research purposes. It should express the intent or medical reason, not the technical details of the procedure itself.
+          ontology: NCIT:C69216 [http://purl.obolibrary.org/obo/NCIT_C69216]
+          values: LookupMany [lookups/ReasonForImagingProcedure.txt], ofType [http://snomed.info/id/138875005]
         - name: DICOM series count
           description: The number of DICOM series.
           ontology: NCIT:C164492 [http://purl.obolibrary.org/obo/NCIT_C164492]
@@ -477,8 +460,8 @@ modules:
       description: A planned laboratory process performed on a slide container with the objective of generating information about the specimen, such as through histological or immunohistochemical staining.
       ontology: OBI:0000070 [http://purl.obolibrary.org/obo/OBI_0000070]
       relationWith:
-        - module: Imaging study
-          relation: SIO:000248 [http://semanticscience.org/resource/SIO_000248]
+        - module: Biospecimens
+          relation: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
       elements:
         - name: Assay identifier
           description: An assay identifier is an identifier that identifies some assay (analysis).
@@ -488,6 +471,10 @@ modules:
           description: The specific type of laboratory test or analytical procedure performed on a bio-specimen mounted on a glass slide. It defines the staining or labeling technique applied to the specimen to reveal specific structural, molecular, or cellular features.
           ontology: NCIT:C189101 [http://purl.obolibrary.org/obo/NCIT_C189101]
           values: LookupOne [lookups/AssayType.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C23043]
+        - name: Belongs to biospecimen
+          description: Reference to the biospecimen (e.g. FFPE block, slide) that was the physical input to this slide preparation assay.
+          ontology: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
+          values: ReferenceOne [Biospecimens]
         - name: Biomarker type
           description: A classification of the type of biomolecule or biological component that the assay targets, labels, or detects. It characterizes whether the biomarker is, for example, a protein, nucleic acid, carbohydrate, lipid, or inorganic substance.
           ontology: NCIT:C201359 [http://purl.obolibrary.org/obo/NCIT_C201359]
@@ -528,6 +515,8 @@ modules:
       description: A sample preparation for a nucleic acids sequencing assay.
       ontology: OBI:0001902 [http://purl.obolibrary.org/obo/OBI_0001902]
       relationWith:
+        - module: Biospecimens
+          relation: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
       elements:
           - name: Sampleprep identifier
             description: A unique proper name or character sequence that identifies this particular sample preparation.
@@ -537,6 +526,10 @@ modules:
             description: Reference to the source material from which this sample was prepared.
             ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
             values: ReferenceOne [Material]
+          - name: Belongs to biospecimen
+            description: Reference to the source biospecimen from which this sample was prepared.
+            ontology: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
+            values: ReferenceOne [Biospecimens]
           - name: Input amount
             description: Amount of input material in nanogram (ng).
             ontology: AFRL:0000010 [http://purl.allotrope.org/ontologies/role#AFRL_0000010]
