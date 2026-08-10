@@ -355,27 +355,6 @@ modules:
             description: The pathological state of the tissue from which this material was derived.
             ontology: NCIT:C28257 [http://purl.obolibrary.org/obo/NCIT_C28257]
             values: LookupOne [lookups/PathologicalState.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C164617]
-          - name: Expiration date
-            description: The date beyond which this material is no longer regarded as fit for use.
-            ontology: NCIT:C164516 [http://purl.obolibrary.org/obo/NCIT_C164516]
-            values: Date
-          - name: Percentage tumor cells
-            description: The percentage of tumor cells compared to total cells present in this material.
-            ontology: NCIT:C127771 [http://purl.obolibrary.org/obo/NCIT_C127771]
-            values: Decimal
-          - name: Physical location
-            description: A place on the Earth where this material is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which freezer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
-            ontology: GAZ:00000448 [http://purl.obolibrary.org/obo/GAZ_00000448]
-            values: String
-          - name: Analyses performed
-            description: Reports the existence of any analyses performed on this material other than genomics (e.g. transcriptomics, metabolomics, proteomics).
-            ontology: IAO:0000702 [http://purl.obolibrary.org/obo/IAO_0000702]
-            values: LookupMany [lookups/AnalysesPerformed.txt], ofType [http://edamontology.org/topic_3391]
-          - name: Derived from
-            description: Indicate if this material was produced from or related to another.
-            ontology: NCIT:C28355 [http://purl.obolibrary.org/obo/NCIT_C28355]
-            values: String #[WORK IN PROGRESS. This field should be proper ReferenceOne to Material, but this is technically problematic due to circular dependencies.]
-          # values: ReferenceOne [Material]
     - name: Biospecimens
       description: Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.
       ontology: NCIT:C70699 [http://purl.obolibrary.org/obo/NCIT_C70699]
@@ -395,6 +374,10 @@ modules:
           description: The specific physical form, fraction, or analyte derived from the parent material (e.g., extracted genomic DNA, total RNA, serum, cell lysate, or FFPE section) prepared for downstream analysis or sequencing.
           ontology: NCIT:C42645 [http://purl.obolibrary.org/obo/NCIT_C42645]
           values: LookupOne [lookups/BiospecimenTypes.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C173496]
+        - name: Percentage tumor cells
+          description: The percentage of tumor cells compared to total cells present in this material.
+          ontology: NCIT:C127771 [http://purl.obolibrary.org/obo/NCIT_C127771]
+          values: Decimal
         - name: Quantity
           description: The total count or number of available physical units, aliquots, blocks, or slides representing this specific biospecimen instance.
           ontology: NCIT:C25256 [http://purl.obolibrary.org/obo/NCIT_C25256]
@@ -403,7 +386,11 @@ modules:
           description: The conditions under which this biospecimen is stored.
           ontology: NCIT:C96145 [http://purl.obolibrary.org/obo/NCIT_C96145]
           values: LookupOne [lookups/StorageConditions.txt], ofType [http://purl.obolibrary.org/obo/NCIT_C96145]
-        - name: Managing Biobank
+        - name: Expiration date
+          description: The date beyond which this material is no longer regarded as fit for use.
+          ontology: NCIT:C164516 [http://purl.obolibrary.org/obo/NCIT_C164516]
+          values: Date
+        - name: Managing biobank
           description: The organization or facility that owns, manages, and physically stores this biospecimen or slide, maintaining custody and responsibility for its storage conditions and associated data.
           ontology: NCIT:C48800 [http://purl.obolibrary.org/obo/NCIT_C48800]
           values: LookupOne [lookups/Institutes.txt], ofType [http://hdl.handle.net/21.12110/1.BE90-1C99-5787]
@@ -462,6 +449,8 @@ modules:
       relationWith:
         - module: Biospecimens
           relation: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
+        - module: Imaging study
+          relation: SIO:000248 [http://semanticscience.org/resource/SIO_000248]
       elements:
         - name: Assay identifier
           description: An assay identifier is an identifier that identifies some assay (analysis).
@@ -475,6 +464,10 @@ modules:
           description: Reference to the biospecimen (e.g. FFPE block, slide) that was the physical input to this slide preparation assay.
           ontology: OBI:0000293 [http://purl.obolibrary.org/obo/OBI_0000293]
           values: ReferenceOne [Biospecimens]
+        - name: Precedes the study
+          description: A temporal and process-oriented relation indicating that this specific slide preparation assay occurred chronologically earlier than the initiation or execution of the imaging study.
+          ontology: SIO:000248 [http://semanticscience.org/resource/SIO_000248]
+          values: ReferenceOne [Imaging study]
         - name: Biomarker type
           description: A classification of the type of biomolecule or biological component that the assay targets, labels, or detects. It characterizes whether the biomarker is, for example, a protein, nucleic acid, carbohydrate, lipid, or inorganic substance.
           ontology: NCIT:C201359 [http://purl.obolibrary.org/obo/NCIT_C201359]
@@ -637,14 +630,6 @@ modules:
             description: Reference to the sequencing that was performed, i.e. the source on which this analysis was based.
             ontology: NCIT:C25683 [http://purl.obolibrary.org/obo/NCIT_C25683]
             values: ReferenceOne [Sequencing]
-          - name: Physical data location
-            description: A place on the Earth where the data is located, by its name or by its geographical location. This definition is intentionally vague to allow reuse locally (e.g. which computer), for contacting (e.g. which institute), broadly for logistical or legal reasons (e.g. city, country or continent).
-            ontology: GAZ:00000448 [http://purl.obolibrary.org/obo/GAZ_00000448]
-            values: String
-          - name: Abstract data location
-            description: The file location of the data, or a copy of the data, on an electronically accessible device for preservation (either in plain-text or encrypted format).
-            ontology: NCIT:C142494 [http://purl.obolibrary.org/obo/NCIT_C142494]
-            values: String
           - name: Data formats stored
             description: Which data file formats (i.e. defined ways or layouts of representing and structuring data in a computer file, blob, string, message, or elsewhere) are stored and potentially available.
             ontology: NCIT:C142494 [http://purl.obolibrary.org/obo/NCIT_C142494]
