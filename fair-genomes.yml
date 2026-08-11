@@ -423,10 +423,14 @@ modules:
           description: Reference to the person whom this imaging study is about.
           ontology: NCIT:C164337 [http://purl.obolibrary.org/obo/NCIT_C164337]
           values: ReferenceOne [Personal]
-        - name: Study start date
+        - name: Study date
           description: The date on which a study began.
           ontology: NCIT:C69208 [http://purl.obolibrary.org/obo/NCIT_C69208]
           values: Date
+        - name: Imaging procedure
+          description: An imaging procedure as defined by SNOMED CT, representing a specific diagnostic or acquisition procedure (e.g., 'CT of breast', 'MRI of head', or 'Whole Slide Imaging'), rather than the general modality or technique alone. The general modality or technique (e.g., 'CT', 'MR', 'SM') is captured separately in the 'Imaging modality' field.
+          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
+          values: LookupOne [lookups/ImagingProcedure.txt], ofType [http://snomed.info/id/15220000]
         - name: Reason for imaging procedure
           description: The clinical or research rationale for performing the imaging procedure. This field captures why the procedure was indicated for the patient, such as screening, diagnosis, treatment planning, or research purposes. It should express the intent or medical reason, not the technical details of the procedure itself.
           ontology: NCIT:C69216 [http://purl.obolibrary.org/obo/NCIT_C69216]
@@ -691,11 +695,7 @@ modules:
           description: Any technology or method that aids in the visualization of any biological process, cell, tissue or organ for use in screening, diagnosis, surgical procedures or therapy.
           ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
           values: LookupOne [lookups/Modality.txt], ofType [http://purl.bioontology.org/ontology/SNOMEDCT/360037004]
-        - name: Imaging procedure
-          description: An imaging procedure as defined by SNOMED CT, representing a specific diagnostic or acquisition procedure (e.g., 'CT of breast', 'MRI of head', or 'Whole Slide Imaging'), rather than the general modality or technique alone. The general modality or technique (e.g., 'CT', 'MR', 'SM') is captured separately in the 'Imaging modality' field.
-          ontology: NCIT:C17369 [http://purl.obolibrary.org/obo/NCIT_C17369]
-          values: LookupOne [lookups/ImagingProcedure.txt], ofType [http://snomed.info/id/15220000]
-        - name: Series start date
+        - name: Series date
           description: The date on which a series began.
           ontology: NCIT:C68616 [http://purl.obolibrary.org/obo/NCIT_C68616]
           values: Date
