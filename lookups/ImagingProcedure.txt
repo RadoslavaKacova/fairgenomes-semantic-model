@@ -2,3 +2,14 @@ value	description	codesystem	code	iri
 Histopathology	Histopathology	SNOMED_CT	252416005	http://snomed.info/id/252416005
 Photomicrography	Photomicrography	SNOMED_CT	60287000	http://snomed.info/id/60287000
 Microscopy	Microscopy	SNOMED_CT	117259009	http://snomed.info/id/117259009
+Ultrasonography	Ultrasonography	SNOMED_CT	16310003	http://snomed.info/id/16310003
+Magnetic resonance imaging	Magnetic resonance imaging	SNOMED_CT	113091000	http://snomed.info/id/113091000
+Computed tomography	Computed tomography	SNOMED_CT	77477000	http://snomed.info/id/77477000
+Biopsy	Biopsy	SNOMED_CT	86273004	http://snomed.info/id/86273004
+Colonoscopy	Colonoscopy	SNOMED_CT	73761001	http://snomed.info/id/73761001
+Gastroscopy	Gastroscopy	SNOMED_CT	46833009	http://snomed.info/id/46833009
+Endoscopic retrograde cholangiopancreatography	Endoscopic retrograde cholangiopancreatography	SNOMED_CT	86049001	http://snomed.info/id/86049001
+Plain chest X-ray	Plain chest X-ray	SNOMED_CT	399208008	http://snomed.info/id/399208008
+Mammography	Mammography	SNOMED_CT	71651007	http://snomed.info/id/71651007
+Screening mammography	Screening mammography	SNOMED_CT	24623002	http://snomed.info/id/24623002
+Percutaneous nephrostomy	Percutaneous nephrostomy	SNOMED_CT	395073009	http://snomed.info/id/395073009

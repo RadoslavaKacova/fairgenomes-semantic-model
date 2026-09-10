@@ -1,2 +1,10 @@
 value	description	codesystem	code	iri
 Clinical finding	Clinical finding	SNOMED_CT	404684003	http://snomed.info/id/404684003
+Screening for malignant neoplasm of breast	Screening for malignant neoplasm of breast	SNOMED_CT	254651000	http://snomed.info/id/254651000
+Neoplasm, uncertain behavior	Neoplasm, uncertain behavior (suspected tumor / suspected malignancy)	SNOMED_CT	196088003	http://snomed.info/id/196088003
+Sarcoma (suspected / follow-up)	Sarcoma	SNOMED_CT	196013005	http://snomed.info/id/196013005
+Infection (suspected)	Suspected infection / inflammation	SNOMED_CT	233607000	http://snomed.info/id/233607000
+Demyelinating disease (suspected)	Demyelinating disease of central nervous system	SNOMED_CT	24700007	http://snomed.info/id/24700007
+Epilepsy (known / follow-up)	Epilepsy	SNOMED_CT	84757009	http://snomed.info/id/84757009
+Cerebral ischemia (suspected)	Cerebral ischemia	SNOMED_CT	41114007	http://snomed.info/id/41114007
+Li-Fraumeni syndrome (genetic risk – WB-MRI screening)	Li-Fraumeni syndrome	SNOMED_CT	428592006	http://snomed.info/id/428592006
