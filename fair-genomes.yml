@@ -489,10 +489,10 @@ modules:
           description: The vendor-stated name of an antibody used to detect and visualize the presence of an antigen.
           ontology: XCO:0000194 [http://purl.obolibrary.org/obo/XCO_0000194]
           values: LookupOne [lookups/AntibodyName.txt], ofType [http://purl.obolibrary.org/obo/XCO_0000194]
-        - name: Antibody identifier
-          description: The distinct ID for an antibody used in an assay.
-          ontology: XCO:0000194 [http://purl.obolibrary.org/obo/XCO_0000194]
-          values: LookupOne [lookups/AntibodyIdentifier.txt], ofType [http://purl.obolibrary.org/obo/XCO_0000194]
+          #- name: Antibody identifier
+          #description: The distinct ID for an antibody used in an assay.
+          #ontology: XCO:0000194 [http://purl.obolibrary.org/obo/XCO_0000194]
+          #values: LookupOne [lookups/AntibodyIdentifier.txt], ofType [http://purl.obolibrary.org/obo/XCO_0000194]
     - name: Sample preparation
       description: The pre-analytical laboratory procedure used to extract, isolate, and prepare nucleic acids into sequencing libraries, including target enrichment, molecular barcoding, and library quality control.
       ontology: OBI:0001902 [http://purl.obolibrary.org/obo/OBI_0001902]

@@ -1,11 +1,394 @@
 value	description	codesystem	code	iri
-Abdomen	Abdomen	SNOMED_CT	85856004	http://snomed.info/id/85856004
-Thorax	Thorax	SNOMED_CT	344001	http://snomed.info/id/344001
-Head	Head	SNOMED_CT	128617001	http://snomed.info/id/128617001
-Brain	Brain	SNOMED_CT	89837001	http://snomed.info/id/89837001
-Heart structure	Heart structure	SNOMED_CT	80144004	http://snomed.info/id/80144004
-Kidney structure	Kidney structure	SNOMED_CT	51299004	http://snomed.info/id/51299004
-Eye structure	Eye structure	SNOMED_CT	41801008	http://snomed.info/id/41801008
-Liver structure	Liver structure	SNOMED_CT	127949000	http://snomed.info/id/127949000
-Lung structure	Lung structure	SNOMED_CT	32849002	http://snomed.info/id/32849002
-Skin structure	Skin structure	SNOMED_CT	71341001	http://snomed.info/id/71341001
+Abdomen	Abdomen	SNOMED_CT	818981001	http://snomed.info/id/818981001
+Abdomen and Pelvis	Abdomen and Pelvis	SNOMED_CT	818982008	http://snomed.info/id/818982008
+Abdominal aorta	Abdominal aorta	SNOMED_CT	7832008	http://snomed.info/id/7832008
+Acromioclavicular joint	Acromioclavicular joint	SNOMED_CT	85856004	http://snomed.info/id/85856004
+Adrenal gland	Adrenal gland	SNOMED_CT	23451007	http://snomed.info/id/23451007
+Amniotic fluid	Amniotic fluid	SNOMED_CT	77012006	http://snomed.info/id/77012006
+Ankle joint	Ankle joint	SNOMED_CT	70258002	http://snomed.info/id/70258002
+Anomalous pulmonary vein	Anomalous pulmonary vein	SNOMED_CT	128585006	http://snomed.info/id/128585006
+Antecubital vein	Antecubital vein	SNOMED_CT	128553008	http://snomed.info/id/128553008
+Anterior cardiac vein	Anterior cardiac vein	SNOMED_CT	194996006	http://snomed.info/id/194996006
+Anterior cerebral artery	Anterior cerebral artery	SNOMED_CT	60176003	http://snomed.info/id/60176003
+Anterior communicating artery	Anterior communicating artery	SNOMED_CT	8012006	http://snomed.info/id/8012006
+Anterior spinal artery	Anterior spinal artery	SNOMED_CT	17388009	http://snomed.info/id/17388009
+Anterior tibial artery	Anterior tibial artery	SNOMED_CT	68053000	http://snomed.info/id/68053000
+Anus	Anus	SNOMED_CT	53505006	http://snomed.info/id/53505006
+Anus, rectum and sigmoid colon	Anus, rectum and sigmoid colon	SNOMED_CT	110612005	http://snomed.info/id/110612005
+Aorta	Aorta	SNOMED_CT	15825003	http://snomed.info/id/15825003
+Aortic arch	Aortic arch	SNOMED_CT	57034009	http://snomed.info/id/57034009
+Aortic fistula	Aortic fistula	SNOMED_CT	128551005	http://snomed.info/id/128551005
+Apex of left ventricle	Apex of left ventricle	SNOMED_CT	128564006	http://snomed.info/id/128564006
+Apex of Lung	Apex of Lung	SNOMED_CT	86598002	http://snomed.info/id/86598002
+Apex of right ventricle	Apex of right ventricle	SNOMED_CT	128565007	http://snomed.info/id/128565007
+Appendix	Appendix	SNOMED_CT	66754008	http://snomed.info/id/66754008
+Artery	Artery	SNOMED_CT	51114001	http://snomed.info/id/51114001
+Ascending aorta	Ascending aorta	SNOMED_CT	54247002	http://snomed.info/id/54247002
+Ascending colon	Ascending colon	SNOMED_CT	9040008	http://snomed.info/id/9040008
+Atrium	Atrium	SNOMED_CT	59652004	http://snomed.info/id/59652004
+Axilla	Axilla	SNOMED_CT	91470000	http://snomed.info/id/91470000
+Axillary Artery	Axillary Artery	SNOMED_CT	67937003	http://snomed.info/id/67937003
+Axillary vein	Axillary vein	SNOMED_CT	68705008	http://snomed.info/id/68705008
+Azygos vein	Azygos vein	SNOMED_CT	72107004	http://snomed.info/id/72107004
+Back	Back	SNOMED_CT	77568009	http://snomed.info/id/77568009
+Baffle	Baffle	SNOMED_CT	128981007	http://snomed.info/id/128981007
+Basilar artery	Basilar artery	SNOMED_CT	59011009	http://snomed.info/id/59011009
+Bile duct	Bile duct	SNOMED_CT	28273000	http://snomed.info/id/28273000
+Biliary tract	Biliary tract	SNOMED_CT	34707002	http://snomed.info/id/34707002
+Bladder	Bladder	SNOMED_CT	89837001	http://snomed.info/id/89837001
+Bladder and urethra	Bladder and urethra	SNOMED_CT	110837003	http://snomed.info/id/110837003
+Body conduit	Body conduit	SNOMED_CT	91830000	http://snomed.info/id/91830000
+Bone of lower limb	Bone of lower limb	SNOMED_CT	72001000	http://snomed.info/id/72001000
+Bone of upper limb	Bone of upper limb	SNOMED_CT	371195002	http://snomed.info/id/371195002
+Boyd's perforating vein	Boyd's perforating vein	SNOMED_CT	128548003	http://snomed.info/id/128548003
+Brachial artery	Brachial artery	SNOMED_CT	17137000	http://snomed.info/id/17137000
+Brachial vein	Brachial vein	SNOMED_CT	20115005	http://snomed.info/id/20115005
+Brain	Brain	SNOMED_CT	12738006	http://snomed.info/id/12738006
+Breast	Breast	SNOMED_CT	76752008	http://snomed.info/id/76752008
+Broad ligament	Broad ligament	SNOMED_CT	34411009	http://snomed.info/id/34411009
+Bronchus	Bronchus	SNOMED_CT	955009	http://snomed.info/id/955009
+Buccal region of face	Buccal region of face	SNOMED_CT	60819002	http://snomed.info/id/60819002
+Buttock	Buttock	SNOMED_CT	46862004	http://snomed.info/id/46862004
+Calcaneus	Calcaneus	SNOMED_CT	80144004	http://snomed.info/id/80144004
+Calf of leg	Calf of leg	SNOMED_CT	53840002	http://snomed.info/id/53840002
+Calyx	Calyx	SNOMED_CT	2334006	http://snomed.info/id/2334006
+Carotid Artery	Carotid Artery	SNOMED_CT	69105007	http://snomed.info/id/69105007
+Carotid bulb	Carotid bulb	SNOMED_CT	21479005	http://snomed.info/id/21479005
+Celiac artery	Celiac artery	SNOMED_CT	57850000	http://snomed.info/id/57850000
+Cephalic vein	Cephalic vein	SNOMED_CT	20699002	http://snomed.info/id/20699002
+Cerebellum	Cerebellum	SNOMED_CT	113305005	http://snomed.info/id/113305005
+Cerebral artery	Cerebral artery	SNOMED_CT	88556005	http://snomed.info/id/88556005
+Cerebral hemisphere	Cerebral hemisphere	SNOMED_CT	372073000	http://snomed.info/id/372073000
+Cervical spine	Cervical spine	SNOMED_CT	122494005	http://snomed.info/id/122494005
+Cervico-thoracic spine	Cervico-thoracic spine	SNOMED_CT	1217257000	http://snomed.info/id/1217257000
+Cervix	Cervix	SNOMED_CT	71252005	http://snomed.info/id/71252005
+Cheek	Cheek	SNOMED_CT	60819002	http://snomed.info/id/60819002
+Chest	Chest	SNOMED_CT	43799004	http://snomed.info/id/43799004
+Chest, Abdomen and Pelvis	Chest, Abdomen and Pelvis	SNOMED_CT	416775004	http://snomed.info/id/416775004
+Chest and Abdomen	Chest and Abdomen	SNOMED_CT	416550000	http://snomed.info/id/416550000
+Choroid plexus	Choroid plexus	SNOMED_CT	80621003	http://snomed.info/id/80621003
+Circle of Willis	Circle of Willis	SNOMED_CT	11279006	http://snomed.info/id/11279006
+Clavicle	Clavicle	SNOMED_CT	51299004	http://snomed.info/id/51299004
+Coccyx	Coccyx	SNOMED_CT	64688005	http://snomed.info/id/64688005
+Colon	Colon	SNOMED_CT	71854001	http://snomed.info/id/71854001
+Common atrium	Common atrium	SNOMED_CT	253276007	http://snomed.info/id/253276007
+Common bile duct	Common bile duct	SNOMED_CT	79741001	http://snomed.info/id/79741001
+Common carotid artery	Common carotid artery	SNOMED_CT	32062004	http://snomed.info/id/32062004
+Common femoral artery	Common femoral artery	SNOMED_CT	181347005	http://snomed.info/id/181347005
+Common femoral vein	Common femoral vein	SNOMED_CT	397363009	http://snomed.info/id/397363009
+Common iliac artery	Common iliac artery	SNOMED_CT	73634005	http://snomed.info/id/73634005
+Common iliac vein	Common iliac vein	SNOMED_CT	46027005	http://snomed.info/id/46027005
+Common ventricle	Common ventricle	SNOMED_CT	45503006	http://snomed.info/id/45503006
+Congenital coronary artery fistula to left atrium	Congenital coronary artery fistula to left atrium	SNOMED_CT	128555001	http://snomed.info/id/128555001
+Congenital coronary artery fistula to left ventricle	Congenital coronary artery fistula to left ventricle	SNOMED_CT	128556000	http://snomed.info/id/128556000
+Congenital coronary artery fistula to right atrium	Congenital coronary artery fistula to right atrium	SNOMED_CT	128557009	http://snomed.info/id/128557009
+Congenital coronary artery fistula to right ventricle	Congenital coronary artery fistula to right ventricle	SNOMED_CT	128558004	http://snomed.info/id/128558004
+Pulmonary arteriovenous fistula	Pulmonary arteriovenous fistula	SNOMED_CT	111289009	http://snomed.info/id/111289009
+Cornea	Cornea	SNOMED_CT	28726007	http://snomed.info/id/28726007
+Coronary artery	Coronary artery	SNOMED_CT	41801008	http://snomed.info/id/41801008
+Coronary sinus	Coronary sinus	SNOMED_CT	90219004	http://snomed.info/id/90219004
+Cranial venous system	Cranial venous system	SNOMED_CT	128320002	http://snomed.info/id/128320002
+Descending aorta	Descending aorta	SNOMED_CT	32672002	http://snomed.info/id/32672002
+Descending colon	Descending colon	SNOMED_CT	32622004	http://snomed.info/id/32622004
+Dodd's perforating vein	Dodd's perforating vein	SNOMED_CT	128554002	http://snomed.info/id/128554002
+Duodenum	Duodenum	SNOMED_CT	38848004	http://snomed.info/id/38848004
+Ear	Ear	SNOMED_CT	117590005	http://snomed.info/id/117590005
+Elbow joint	Elbow joint	SNOMED_CT	16953009	http://snomed.info/id/16953009
+Endo-arterial	Endo-arterial	SNOMED_CT	51114001	http://snomed.info/id/51114001
+Endo-cardiac	Endo-cardiac	SNOMED_CT	80891009	http://snomed.info/id/80891009
+Endo-esophageal	Endo-esophageal	SNOMED_CT	32849002	http://snomed.info/id/32849002
+Endometrium	Endometrium	SNOMED_CT	2739003	http://snomed.info/id/2739003
+Endo-nasal	Endo-nasal	SNOMED_CT	53342003	http://snomed.info/id/53342003
+Endo-nasopharyngeal	Endo-nasopharyngeal	SNOMED_CT	18962004	http://snomed.info/id/18962004
+Endo-rectal	Endo-rectal	SNOMED_CT	34402009	http://snomed.info/id/34402009
+Endo-renal	Endo-renal	SNOMED_CT	64033007	http://snomed.info/id/64033007
+Endo-ureteric	Endo-ureteric	SNOMED_CT	87953007	http://snomed.info/id/87953007
+Endo-urethral	Endo-urethral	SNOMED_CT	13648007	http://snomed.info/id/13648007
+Endo-vaginal	Endo-vaginal	SNOMED_CT	76784001	http://snomed.info/id/76784001
+Endo-vascular	Endo-vascular	SNOMED_CT	59820001	http://snomed.info/id/59820001
+Endo-venous	Endo-venous	SNOMED_CT	29092000	http://snomed.info/id/29092000
+Endo-vesical	Endo-vesical	SNOMED_CT	48367006	http://snomed.info/id/48367006
+Entire body	Entire body	SNOMED_CT	38266002	http://snomed.info/id/38266002
+Epididymis	Epididymis	SNOMED_CT	87644002	http://snomed.info/id/87644002
+Epigastric region	Epigastric region	SNOMED_CT	27947004	http://snomed.info/id/27947004
+Esophagus	Esophagus	SNOMED_CT	32849002	http://snomed.info/id/32849002
+Esophagus, stomach and duodenum	Esophagus, stomach and duodenum	SNOMED_CT	110861005	http://snomed.info/id/110861005
+External auditory canal	External auditory canal	SNOMED_CT	84301002	http://snomed.info/id/84301002
+External carotid artery	External carotid artery	SNOMED_CT	22286001	http://snomed.info/id/22286001
+External iliac artery	External iliac artery	SNOMED_CT	113269004	http://snomed.info/id/113269004
+External iliac vein	External iliac vein	SNOMED_CT	63507001	http://snomed.info/id/63507001
+External jugular vein	External jugular vein	SNOMED_CT	71585003	http://snomed.info/id/71585003
+Extremity	Extremity	SNOMED_CT	66019005	http://snomed.info/id/66019005
+Eye	Eye	SNOMED_CT	81745001	http://snomed.info/id/81745001
+Eyelid	Eyelid	SNOMED_CT	80243003	http://snomed.info/id/80243003
+Eye region	Eye region	SNOMED_CT	371398005	http://snomed.info/id/371398005
+Face	Face	SNOMED_CT	89545001	http://snomed.info/id/89545001
+Facial artery	Facial artery	SNOMED_CT	23074001	http://snomed.info/id/23074001
+Facial bones	Facial bones	SNOMED_CT	91397008	http://snomed.info/id/91397008
+Femoral artery	Femoral artery	SNOMED_CT	7657000	http://snomed.info/id/7657000
+Femoral vein	Femoral vein	SNOMED_CT	83419000	http://snomed.info/id/83419000
+Femur	Femur	SNOMED_CT	71341001	http://snomed.info/id/71341001
+Fibula	Fibula	SNOMED_CT	87342007	http://snomed.info/id/87342007
+Finger	Finger	SNOMED_CT	7569003	http://snomed.info/id/7569003
+Flank	Flank	SNOMED_CT	58602004	http://snomed.info/id/58602004
+Fontanel of skull	Fontanel of skull	SNOMED_CT	79361005	http://snomed.info/id/79361005
+Foot	Foot	SNOMED_CT	56459004	http://snomed.info/id/56459004
+Forearm	Forearm	SNOMED_CT	14975008	http://snomed.info/id/14975008
+Fourth ventricle	Fourth ventricle	SNOMED_CT	35918002	http://snomed.info/id/35918002
+Gallbladder	Gallbladder	SNOMED_CT	28231008	http://snomed.info/id/28231008
+Gastric vein	Gastric vein	SNOMED_CT	110568007	http://snomed.info/id/110568007
+Genicular artery	Genicular artery	SNOMED_CT	128559007	http://snomed.info/id/128559007
+Gestational sac	Gestational sac	SNOMED_CT	300571009	http://snomed.info/id/300571009
+Gluteal region	Gluteal region	SNOMED_CT	46862004	http://snomed.info/id/46862004
+Great cardiac vein	Great cardiac vein	SNOMED_CT	5928000	http://snomed.info/id/5928000
+Great saphenous vein	Great saphenous vein	SNOMED_CT	60734001	http://snomed.info/id/60734001
+Hand	Hand	SNOMED_CT	85562004	http://snomed.info/id/85562004
+Head	Head	SNOMED_CT	69536005	http://snomed.info/id/69536005
+Head and Neck	Head and Neck	SNOMED_CT	774007	http://snomed.info/id/774007
+Heart	Heart	SNOMED_CT	80891009	http://snomed.info/id/80891009
+Hepatic artery	Hepatic artery	SNOMED_CT	76015000	http://snomed.info/id/76015000
+Hepatic vein	Hepatic vein	SNOMED_CT	8993003	http://snomed.info/id/8993003
+Hip joint	Hip joint	SNOMED_CT	24136001	http://snomed.info/id/24136001
+Humerus	Humerus	SNOMED_CT	85050009	http://snomed.info/id/85050009
+Hunterian perforating vein	Hunterian perforating vein	SNOMED_CT	128560002	http://snomed.info/id/128560002
+Hypogastric region	Hypogastric region	SNOMED_CT	11708003	http://snomed.info/id/11708003
+Hypopharynx	Hypopharynx	SNOMED_CT	81502006	http://snomed.info/id/81502006
+Ileum	Ileum	SNOMED_CT	34516001	http://snomed.info/id/34516001
+Iliac and/or femoral artery	Iliac and/or femoral artery	SNOMED_CT	299716001	http://snomed.info/id/299716001
+Iliac artery	Iliac artery	SNOMED_CT	10293006	http://snomed.info/id/10293006
+Iliac vein	Iliac vein	SNOMED_CT	244411005	http://snomed.info/id/244411005
+Ilium	Ilium	SNOMED_CT	22356005	http://snomed.info/id/22356005
+Inferior cardiac vein	Inferior cardiac vein	SNOMED_CT	195416006	http://snomed.info/id/195416006
+Inferior left pulmonary vein	Inferior left pulmonary vein	SNOMED_CT	51249003	http://snomed.info/id/51249003
+Inferior mesenteric artery	Inferior mesenteric artery	SNOMED_CT	33795007	http://snomed.info/id/33795007
+Inferior right pulmonary vein	Inferior right pulmonary vein	SNOMED_CT	113273001	http://snomed.info/id/113273001
+Inferior vena cava	Inferior vena cava	SNOMED_CT	64131007	http://snomed.info/id/64131007
+Inguinal region	Inguinal region	SNOMED_CT	26893007	http://snomed.info/id/26893007
+Innominate artery	Innominate artery	SNOMED_CT	12691009	http://snomed.info/id/12691009
+Innominate vein	Innominate vein	SNOMED_CT	8887007	http://snomed.info/id/8887007
+Internal Auditory Canal	Internal Auditory Canal	SNOMED_CT	361078006	http://snomed.info/id/361078006
+Internal carotid artery	Internal carotid artery	SNOMED_CT	86117002	http://snomed.info/id/86117002
+Internal iliac artery	Internal iliac artery	SNOMED_CT	90024005	http://snomed.info/id/90024005
+Internal jugular vein	Internal jugular vein	SNOMED_CT	12123001	http://snomed.info/id/12123001
+Internal mammary artery	Internal mammary artery	SNOMED_CT	69327007	http://snomed.info/id/69327007
+Intra-abdominopelvic	Intra-abdominopelvic	SNOMED_CT	818987002	http://snomed.info/id/818987002
+Intra-articular	Intra-articular	SNOMED_CT	131183008	http://snomed.info/id/131183008
+Intracranial	Intracranial	SNOMED_CT	1101003	http://snomed.info/id/1101003
+Intra-esophageal	Intra-esophageal	SNOMED_CT	32849002	http://snomed.info/id/32849002
+Intra-pelvic	Intra-pelvic	SNOMED_CT	816989007	http://snomed.info/id/816989007
+Intra-thoracic	Intra-thoracic	SNOMED_CT	43799004	http://snomed.info/id/43799004
+Jaw region	Jaw region	SNOMED_CT	661005	http://snomed.info/id/661005
+Jejunum	Jejunum	SNOMED_CT	21306003	http://snomed.info/id/21306003
+Joint	Joint	SNOMED_CT	39352004	http://snomed.info/id/39352004
+Juxtaposed atrial appendage	Juxtaposed atrial appendage	SNOMED_CT	128563000	http://snomed.info/id/128563000
+Kidney	Kidney	SNOMED_CT	64033007	http://snomed.info/id/64033007
+Knee	Knee	SNOMED_CT	72696002	http://snomed.info/id/72696002
+Lacrimal artery	Lacrimal artery	SNOMED_CT	59749000	http://snomed.info/id/59749000
+Lacrimal artery of right eye	Lacrimal artery of right eye	SNOMED_CT	128979005	http://snomed.info/id/128979005
+Large intestine	Large intestine	SNOMED_CT	14742008	http://snomed.info/id/14742008
+Larynx	Larynx	SNOMED_CT	4596009	http://snomed.info/id/4596009
+Lateral Ventricle	Lateral Ventricle	SNOMED_CT	66720007	http://snomed.info/id/66720007
+Left atrium	Left atrium	SNOMED_CT	82471001	http://snomed.info/id/82471001
+Left auricular appendage	Left auricular appendage	SNOMED_CT	33626005	http://snomed.info/id/33626005
+Left femoral artery	Left femoral artery	SNOMED_CT	113270003	http://snomed.info/id/113270003
+Left hepatic vein	Left hepatic vein	SNOMED_CT	273202007	http://snomed.info/id/273202007
+Left hypochondriac region	Left hypochondriac region	SNOMED_CT	133945003	http://snomed.info/id/133945003
+Left inguinal region	Left inguinal region	SNOMED_CT	85119005	http://snomed.info/id/85119005
+Left lower quadrant of abdomen	Left lower quadrant of abdomen	SNOMED_CT	68505006	http://snomed.info/id/68505006
+Left lumbar region	Left lumbar region	SNOMED_CT	1017210004	http://snomed.info/id/1017210004
+Left portal vein	Left portal vein	SNOMED_CT	70253006	http://snomed.info/id/70253006
+Left pulmonary artery	Left pulmonary artery	SNOMED_CT	50408007	http://snomed.info/id/50408007
+Left upper quadrant of abdomen	Left upper quadrant of abdomen	SNOMED_CT	86367003	http://snomed.info/id/86367003
+Left ventricle	Left ventricle	SNOMED_CT	87878005	http://snomed.info/id/87878005
+Left ventricle inflow	Left ventricle inflow	SNOMED_CT	70238003	http://snomed.info/id/70238003
+Left ventricle outflow tract	Left ventricle outflow tract	SNOMED_CT	13418002	http://snomed.info/id/13418002
+Lingual artery	Lingual artery	SNOMED_CT	113264009	http://snomed.info/id/113264009
+Liver	Liver	SNOMED_CT	10200004	http://snomed.info/id/10200004
+Lower inner quadrant of breast	Lower inner quadrant of breast	SNOMED_CT	19100000	http://snomed.info/id/19100000
+Lower leg	Lower leg	SNOMED_CT	30021000	http://snomed.info/id/30021000
+Lower limb	Lower limb	SNOMED_CT	61685007	http://snomed.info/id/61685007
+Lower outer quadrant of breast	Lower outer quadrant of breast	SNOMED_CT	33564002	http://snomed.info/id/33564002
+Lumbar artery	Lumbar artery	SNOMED_CT	34635009	http://snomed.info/id/34635009
+Lumbar region	Lumbar region	SNOMED_CT	52612000	http://snomed.info/id/52612000
+Lumbar spine	Lumbar spine	SNOMED_CT	122496007	http://snomed.info/id/122496007
+Lumbo-sacral spine	Lumbo-sacral spine	SNOMED_CT	1217253001	http://snomed.info/id/1217253001
+Lumen of blood vessel	Lumen of blood vessel	SNOMED_CT	91747007	http://snomed.info/id/91747007
+Lung	Lung	SNOMED_CT	39607008	http://snomed.info/id/39607008
+Mandible	Mandible	SNOMED_CT	91609006	http://snomed.info/id/91609006
+Mastoid bone	Mastoid bone	SNOMED_CT	59066005	http://snomed.info/id/59066005
+Maxilla	Maxilla	SNOMED_CT	70925003	http://snomed.info/id/70925003
+Mediastinum	Mediastinum	SNOMED_CT	72410000	http://snomed.info/id/72410000
+Mesenteric artery	Mesenteric artery	SNOMED_CT	86570000	http://snomed.info/id/86570000
+Mesenteric vein	Mesenteric vein	SNOMED_CT	128583004	http://snomed.info/id/128583004
+Middle cerebral artery	Middle cerebral artery	SNOMED_CT	17232002	http://snomed.info/id/17232002
+Middle hepatic vein	Middle hepatic vein	SNOMED_CT	273099000	http://snomed.info/id/273099000
+Morisons pouch	Morisons pouch	SNOMED_CT	243977002	http://snomed.info/id/243977002
+Mouth	Mouth	SNOMED_CT	123851003	http://snomed.info/id/123851003
+Muscle of lower limb	Muscle of lower limb	SNOMED_CT	102292000	http://snomed.info/id/102292000
+Muscle of upper limb	Muscle of upper limb	SNOMED_CT	30608006	http://snomed.info/id/30608006
+Nasal bone	Nasal bone	SNOMED_CT	74386004	http://snomed.info/id/74386004
+Nasopharynx	Nasopharynx	SNOMED_CT	360955006	http://snomed.info/id/360955006
+Neck	Neck	SNOMED_CT	45048000	http://snomed.info/id/45048000
+Neck, Chest, Abdomen and Pelvis	Neck, Chest, Abdomen and Pelvis	SNOMED_CT	416319003	http://snomed.info/id/416319003
+Neck, Chest and Abdomen	Neck, Chest and Abdomen	SNOMED_CT	416152001	http://snomed.info/id/416152001
+Neck and Chest	Neck and Chest	SNOMED_CT	417437006	http://snomed.info/id/417437006
+Nose	Nose	SNOMED_CT	45206002	http://snomed.info/id/45206002
+Occipital artery	Occipital artery	SNOMED_CT	31145008	http://snomed.info/id/31145008
+Occipital vein	Occipital vein	SNOMED_CT	32114007	http://snomed.info/id/32114007
+Omental bursa	Omental bursa	SNOMED_CT	113346000	http://snomed.info/id/113346000
+Omentum	Omentum	SNOMED_CT	27398004	http://snomed.info/id/27398004
+Ophthalmic artery	Ophthalmic artery	SNOMED_CT	53549008	http://snomed.info/id/53549008
+Optic canal	Optic canal	SNOMED_CT	55024004	http://snomed.info/id/55024004
+Orbital structure	Orbital structure	SNOMED_CT	363654007	http://snomed.info/id/363654007
+Ovary	Ovary	SNOMED_CT	15497006	http://snomed.info/id/15497006
+Pancreas	Pancreas	SNOMED_CT	15776009	http://snomed.info/id/15776009
+Pancreatic duct	Pancreatic duct	SNOMED_CT	69930009	http://snomed.info/id/69930009
+Pancreatic duct and bile duct systems	Pancreatic duct and bile duct systems	SNOMED_CT	110621006	http://snomed.info/id/110621006
+Paranasal sinus	Paranasal sinus	SNOMED_CT	2095001	http://snomed.info/id/2095001
+Parasternal	Parasternal	SNOMED_CT	91691001	http://snomed.info/id/91691001
+Parathyroid	Parathyroid	SNOMED_CT	111002	http://snomed.info/id/111002
+Parotid gland	Parotid gland	SNOMED_CT	45289007	http://snomed.info/id/45289007
+Patella	Patella	SNOMED_CT	64234005	http://snomed.info/id/64234005
+Patent ductus arteriosus	Patent ductus arteriosus	SNOMED_CT	83330001	http://snomed.info/id/83330001
+Pelvis	Pelvis	SNOMED_CT	816092008	http://snomed.info/id/816092008
+Pelvis and lower extremities	Pelvis and lower extremities	SNOMED_CT	1231522001	http://snomed.info/id/1231522001
+Penile artery	Penile artery	SNOMED_CT	282044005	http://snomed.info/id/282044005
+Penis	Penis	SNOMED_CT	18911002	http://snomed.info/id/18911002
+Perineum	Perineum	SNOMED_CT	38864007	http://snomed.info/id/38864007
+Peroneal artery	Peroneal artery	SNOMED_CT	8821006	http://snomed.info/id/8821006
+Phantom	Phantom	SNOMED_CT	706342009	http://snomed.info/id/706342009
+Pharynx	Pharynx	SNOMED_CT	54066008	http://snomed.info/id/54066008
+Pharynx and larynx	Pharynx and larynx	SNOMED_CT	312535008	http://snomed.info/id/312535008
+Placenta	Placenta	SNOMED_CT	78067005	http://snomed.info/id/78067005
+Popliteal artery	Popliteal artery	SNOMED_CT	43899006	http://snomed.info/id/43899006
+Popliteal fossa	Popliteal fossa	SNOMED_CT	32361000	http://snomed.info/id/32361000
+Popliteal vein	Popliteal vein	SNOMED_CT	56849005	http://snomed.info/id/56849005
+Portal vein	Portal vein	SNOMED_CT	32764006	http://snomed.info/id/32764006
+Posterior cerebral artery	Posterior cerebral artery	SNOMED_CT	70382005	http://snomed.info/id/70382005
+Posterior communicating artery	Posterior communicating artery	SNOMED_CT	43119007	http://snomed.info/id/43119007
+Posterior medial tributary	Posterior medial tributary	SNOMED_CT	128569001	http://snomed.info/id/128569001
+Posterior tibial artery	Posterior tibial artery	SNOMED_CT	13363002	http://snomed.info/id/13363002
+Primitive aorta	Primitive aorta	SNOMED_CT	14944004	http://snomed.info/id/14944004
+Primitive pulmonary artery	Primitive pulmonary artery	SNOMED_CT	91707000	http://snomed.info/id/91707000
+Profunda femoris artery	Profunda femoris artery	SNOMED_CT	31677005	http://snomed.info/id/31677005
+Profunda femoris vein	Profunda femoris vein	SNOMED_CT	23438002	http://snomed.info/id/23438002
+Prostate	Prostate	SNOMED_CT	41216001	http://snomed.info/id/41216001
+Pulmonary artery	Pulmonary artery	SNOMED_CT	81040000	http://snomed.info/id/81040000
+Pulmonary artery conduit	Pulmonary artery conduit	SNOMED_CT	128584005	http://snomed.info/id/128584005
+Pulmonary chamber of cor triatriatum	Pulmonary chamber of cor triatriatum	SNOMED_CT	128586007	http://snomed.info/id/128586007
+Pulmonary vein	Pulmonary vein	SNOMED_CT	122972007	http://snomed.info/id/122972007
+Pulmonary vein confluence	Pulmonary vein confluence	SNOMED_CT	128566008	http://snomed.info/id/128566008
+Pulmonary venous atrium	Pulmonary venous atrium	SNOMED_CT	128567004	http://snomed.info/id/128567004
+Radial artery	Radial artery	SNOMED_CT	45631007	http://snomed.info/id/45631007
+Radius	Radius	SNOMED_CT	62413002	http://snomed.info/id/62413002
+Radius and ulna	Radius and ulna	SNOMED_CT	110535000	http://snomed.info/id/110535000
+Rectouterine pouch	Rectouterine pouch	SNOMED_CT	53843000	http://snomed.info/id/53843000
+Rectum	Rectum	SNOMED_CT	34402009	http://snomed.info/id/34402009
+Renal artery	Renal artery	SNOMED_CT	2841007	http://snomed.info/id/2841007
+Renal pelvis	Renal pelvis	SNOMED_CT	25990002	http://snomed.info/id/25990002
+Renal vein	Renal vein	SNOMED_CT	56400007	http://snomed.info/id/56400007
+Retroperitoneum	Retroperitoneum	SNOMED_CT	82849001	http://snomed.info/id/82849001
+Rib	Rib	SNOMED_CT	113197003	http://snomed.info/id/113197003
+Right atrium	Right atrium	SNOMED_CT	73829009	http://snomed.info/id/73829009
+Right auricular appendage	Right auricular appendage	SNOMED_CT	68300000	http://snomed.info/id/68300000
+Right femoral artery	Right femoral artery	SNOMED_CT	69833005	http://snomed.info/id/69833005
+Right hepatic vein	Right hepatic vein	SNOMED_CT	272998002	http://snomed.info/id/272998002
+Right hypochondriac region	Right hypochondriac region	SNOMED_CT	133946002	http://snomed.info/id/133946002
+Right inguinal region	Right inguinal region	SNOMED_CT	37117007	http://snomed.info/id/37117007
+Right lower quadrant of abdomen	Right lower quadrant of abdomen	SNOMED_CT	48544008	http://snomed.info/id/48544008
+Right lumbar region	Right lumbar region	SNOMED_CT	1017211000	http://snomed.info/id/1017211000
+Right portal vein	Right portal vein	SNOMED_CT	73931004	http://snomed.info/id/73931004
+Right pulmonary artery	Right pulmonary artery	SNOMED_CT	78480002	http://snomed.info/id/78480002
+Right upper quadrant of abdomen	Right upper quadrant of abdomen	SNOMED_CT	50519007	http://snomed.info/id/50519007
+Right ventricle	Right ventricle	SNOMED_CT	53085002	http://snomed.info/id/53085002
+Right ventricle inflow	Right ventricle inflow	SNOMED_CT	8017000	http://snomed.info/id/8017000
+Right ventricle outflow tract	Right ventricle outflow tract	SNOMED_CT	44627009	http://snomed.info/id/44627009
+Sacroiliac joint	Sacroiliac joint	SNOMED_CT	39723000	http://snomed.info/id/39723000
+Sacrum	Sacrum	SNOMED_CT	54735007	http://snomed.info/id/54735007
+Saphenofemoral junction	Saphenofemoral junction	SNOMED_CT	128587003	http://snomed.info/id/128587003
+Saphenous vein	Saphenous vein	SNOMED_CT	362072009	http://snomed.info/id/362072009
+Scalp	Scalp	SNOMED_CT	41695006	http://snomed.info/id/41695006
+Scapula	Scapula	SNOMED_CT	79601000	http://snomed.info/id/79601000
+Sclera	Sclera	SNOMED_CT	18619003	http://snomed.info/id/18619003
+Scrotum	Scrotum	SNOMED_CT	20233005	http://snomed.info/id/20233005
+Sella turcica	Sella turcica	SNOMED_CT	42575006	http://snomed.info/id/42575006
+Seminal vesicle	Seminal vesicle	SNOMED_CT	64739004	http://snomed.info/id/64739004
+Sesamoid bones of foot	Sesamoid bones of foot	SNOMED_CT	58742003	http://snomed.info/id/58742003
+Shoulder	Shoulder	SNOMED_CT	16982005	http://snomed.info/id/16982005
+Sigmoid colon	Sigmoid colon	SNOMED_CT	60184004	http://snomed.info/id/60184004
+Skull	Skull	SNOMED_CT	89546000	http://snomed.info/id/89546000
+Small intestine	Small intestine	SNOMED_CT	30315005	http://snomed.info/id/30315005
+Spinal cord	Spinal cord	SNOMED_CT	2748008	http://snomed.info/id/2748008
+Spine	Spine	SNOMED_CT	421060004	http://snomed.info/id/421060004
+Spleen	Spleen	SNOMED_CT	78961009	http://snomed.info/id/78961009
+Splenic artery	Splenic artery	SNOMED_CT	22083002	http://snomed.info/id/22083002
+Splenic vein	Splenic vein	SNOMED_CT	35819009	http://snomed.info/id/35819009
+Sternoclavicular joint	Sternoclavicular joint	SNOMED_CT	7844006	http://snomed.info/id/7844006
+Sternum	Sternum	SNOMED_CT	56873002	http://snomed.info/id/56873002
+Stomach	Stomach	SNOMED_CT	69695003	http://snomed.info/id/69695003
+Subclavian artery	Subclavian artery	SNOMED_CT	36765005	http://snomed.info/id/36765005
+Subclavian vein	Subclavian vein	SNOMED_CT	9454009	http://snomed.info/id/9454009
+Subcostal	Subcostal	SNOMED_CT	19695001	http://snomed.info/id/19695001
+Submandibular area	Submandibular area	SNOMED_CT	5713008	http://snomed.info/id/5713008
+Submandibular gland	Submandibular gland	SNOMED_CT	54019009	http://snomed.info/id/54019009
+Submental	Submental	SNOMED_CT	170887008	http://snomed.info/id/170887008
+Subxiphoid	Subxiphoid	SNOMED_CT	5076001	http://snomed.info/id/5076001
+Superficial femoral artery	Superficial femoral artery	SNOMED_CT	181349008	http://snomed.info/id/181349008
+Superficial femoral vein	Superficial femoral vein	SNOMED_CT	397364003	http://snomed.info/id/397364003
+Superficial temporal artery	Superficial temporal artery	SNOMED_CT	15672000	http://snomed.info/id/15672000
+Superior left pulmonary vein	Superior left pulmonary vein	SNOMED_CT	43863001	http://snomed.info/id/43863001
+Superior mesenteric artery	Superior mesenteric artery	SNOMED_CT	42258001	http://snomed.info/id/42258001
+Superior right pulmonary vein	Superior right pulmonary vein	SNOMED_CT	8629005	http://snomed.info/id/8629005
+Superior thyroid artery	Superior thyroid artery	SNOMED_CT	72021004	http://snomed.info/id/72021004
+Superior vena cava	Superior vena cava	SNOMED_CT	48345005	http://snomed.info/id/48345005
+Supraclavicular region of neck	Supraclavicular region of neck	SNOMED_CT	77621008	http://snomed.info/id/77621008
+Suprapubic region	Suprapubic region	SNOMED_CT	11708003	http://snomed.info/id/11708003
+Suprasternal notch	Suprasternal notch	SNOMED_CT	26493002	http://snomed.info/id/26493002
+Systemic collateral artery to lung	Systemic collateral artery to lung	SNOMED_CT	128589000	http://snomed.info/id/128589000
+Systemic venous atrium	Systemic venous atrium	SNOMED_CT	128568009	http://snomed.info/id/128568009
+Tarsal joint	Tarsal joint	SNOMED_CT	27949001	http://snomed.info/id/27949001
+Temporomandibular joint	Temporomandibular joint	SNOMED_CT	53620006	http://snomed.info/id/53620006
+Testis	Testis	SNOMED_CT	40689003	http://snomed.info/id/40689003
+Thalamus	Thalamus	SNOMED_CT	42695009	http://snomed.info/id/42695009
+Thigh	Thigh	SNOMED_CT	68367000	http://snomed.info/id/68367000
+Third ventricle	Third ventricle	SNOMED_CT	49841001	http://snomed.info/id/49841001
+Thoracic aorta	Thoracic aorta	SNOMED_CT	113262008	http://snomed.info/id/113262008
+Thoracic spine	Thoracic spine	SNOMED_CT	122495006	http://snomed.info/id/122495006
+Thoraco-lumbar spine	Thoraco-lumbar spine	SNOMED_CT	1217256009	http://snomed.info/id/1217256009
+Thorax	Thorax	SNOMED_CT	43799004	http://snomed.info/id/43799004
+Thumb	Thumb	SNOMED_CT	76505004	http://snomed.info/id/76505004
+Thymus	Thymus	SNOMED_CT	9875009	http://snomed.info/id/9875009
+Thyroid	Thyroid	SNOMED_CT	69748006	http://snomed.info/id/69748006
+Tibia	Tibia	SNOMED_CT	12611008	http://snomed.info/id/12611008
+Tibia and fibula	Tibia and fibula	SNOMED_CT	110536004	http://snomed.info/id/110536004
+Toe	Toe	SNOMED_CT	29707007	http://snomed.info/id/29707007
+Tongue	Tongue	SNOMED_CT	21974007	http://snomed.info/id/21974007
+Trachea	Trachea	SNOMED_CT	44567001	http://snomed.info/id/44567001
+Trachea and bronchus	Trachea and bronchus	SNOMED_CT	110726009	http://snomed.info/id/110726009
+Transverse colon	Transverse colon	SNOMED_CT	485005	http://snomed.info/id/485005
+Truncus arteriosus communis	Truncus arteriosus communis	SNOMED_CT	61959006	http://snomed.info/id/61959006
+Truncus coeliacus	Truncus coeliacus	SNOMED_CT	57850000	http://snomed.info/id/57850000
+Ulna	Ulna	SNOMED_CT	23416004	http://snomed.info/id/23416004
+Ulnar artery	Ulnar artery	SNOMED_CT	44984001	http://snomed.info/id/44984001
+Umbilical artery	Umbilical artery	SNOMED_CT	50536004	http://snomed.info/id/50536004
+Umbilical region	Umbilical region	SNOMED_CT	90290004	http://snomed.info/id/90290004
+Umbilical vein	Umbilical vein	SNOMED_CT	284639000	http://snomed.info/id/284639000
+Upper arm	Upper arm	SNOMED_CT	40983000	http://snomed.info/id/40983000
+Upper inner quadrant of breast	Upper inner quadrant of breast	SNOMED_CT	77831004	http://snomed.info/id/77831004
+Upper limb	Upper limb	SNOMED_CT	53120007	http://snomed.info/id/53120007
+Upper outer quadrant of breast	Upper outer quadrant of breast	SNOMED_CT	76365002	http://snomed.info/id/76365002
+Upper urinary tract	Upper urinary tract	SNOMED_CT	431491007	http://snomed.info/id/431491007
+Ureter	Ureter	SNOMED_CT	87953007	http://snomed.info/id/87953007
+Urethra	Urethra	SNOMED_CT	13648007	http://snomed.info/id/13648007
+Uterus	Uterus	SNOMED_CT	35039007	http://snomed.info/id/35039007
+Uterus and fallopian tubes	Uterus and fallopian tubes	SNOMED_CT	110639002	http://snomed.info/id/110639002
+Vagina	Vagina	SNOMED_CT	76784001	http://snomed.info/id/76784001
+Vascular graft	Vascular graft	SNOMED_CT	118375008	http://snomed.info/id/118375008
+Vein	Vein	SNOMED_CT	29092000	http://snomed.info/id/29092000
+Venous network	Venous network	SNOMED_CT	34340008	http://snomed.info/id/34340008
+Ventricle	Ventricle	SNOMED_CT	21814001	http://snomed.info/id/21814001
+Vertebral artery	Vertebral artery	SNOMED_CT	85234005	http://snomed.info/id/85234005
+Vertebral column and cranium	Vertebral column and cranium	SNOMED_CT	110517009	http://snomed.info/id/110517009
+Vulva	Vulva	SNOMED_CT	45292006	http://snomed.info/id/45292006
+Wrist joint	Wrist joint	SNOMED_CT	74670003	http://snomed.info/id/74670003
+Zygoma	Zygoma	SNOMED_CT	13881006	http://snomed.info/id/13881006
