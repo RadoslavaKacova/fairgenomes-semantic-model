@@ -2,65 +2,6 @@
 
 This metadata schema is an extension of the [FAIR Genomes Metadata Schema](https://github.com/fairgenomes/fairgenomes-semantic-model) ([van der Velde et al., 2022](https://www.nature.com/articles/s41597-022-01265-x)) and its nine core modules. Tailored for the Czech national biobank metadata catalogue, it extends the original sequencing focus by incorporating dedicated modules for physical biospecimen management, alongside radiological and whole slide imaging (WSI) data linked directly to biosamples and their donors.
 
-```mermaid
-flowchart TD
-    classDef fgCore fill:#e1f0fa,stroke:#1a659e,stroke-width:1.5px,color:#000;
-    classDef biobank fill:#fde2e4,stroke:#c9184a,stroke-width:1.5px,color:#000;
-    classDef imaging fill:#d8f3dc,stroke:#2d6a4f,stroke-width:1.5px,color:#000;
-
-    Study["Study"]:::fgCore
-    Personal["Personal"]:::fgCore
-    ConsentForm["Leaflet and consent form"]:::fgCore
-    IndividualConsent["Individual consent"]:::fgCore
-    Clinical["Clinical"]:::fgCore
-    Material["Material"]:::fgCore
-    SamplePrep["Sample preparation"]:::fgCore
-    Sequencing["Sequencing"]:::fgCore
-    Analysis["Analysis"]:::fgCore
-
-    Biospecimens["Biospecimens"]:::biobank
-
-    SlidePrep["Slide preparation assay"]:::imaging
-    ImagingStudy["Imaging study"]:::imaging
-    ImagingSeries["Imaging series"]:::imaging
-
-    CT["Computed tomography (CT)"]:::imaging
-    MR["Magnetic resonance (MR)"]:::imaging
-    WSI["Whole slide imaging (WSI)"]:::imaging
-    DX["Digital radiography (DX)"]:::imaging
-    MG["Digital mammography (MG)"]:::imaging
-    US["Ultrasound imaging (US)"]:::imaging
-    PET["PET/NM-Series"]:::imaging
-
-    Personal -->|participates in| Study
-    IndividualConsent -->|is about| Study
-    IndividualConsent -->|is the form of| ConsentForm
-    Personal -->|has signed| IndividualConsent
-
-    Clinical -->|is about| Personal
-    Material -->|sampled from| Personal
-    Material -->|participates in| Clinical
-
-    Biospecimens -->|derives from| Material
-
-    SamplePrep -->|has specified input| Biospecimens
-    Sequencing -->|is characterized by| SamplePrep
-    Analysis -->|has source| Sequencing
-
-    SlidePrep -->|has specified input| Biospecimens
-    SlidePrep -->|precedes| ImagingStudy
-    ImagingStudy -->|participates in| Clinical
-    ImagingStudy -->|has part| ImagingSeries
-
-    ImagingSeries -->|bearer of| CT
-    ImagingSeries -->|bearer of| MR
-    ImagingSeries -->|bearer of| WSI
-    ImagingSeries -->|bearer of| DX
-    ImagingSeries -->|bearer of| MG
-    ImagingSeries -->|bearer of| US
-    ImagingSeries -->|bearer of| PET
-```
-
 ## Explore
 
 Discover the full schema at the [interactive overview](generated/markdown/fairgenomes-semantic-model.md). 
