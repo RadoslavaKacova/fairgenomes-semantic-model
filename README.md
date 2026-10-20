@@ -2,6 +2,8 @@
 
 This metadata schema is an extension of the [FAIR Genomes Metadata Schema](https://github.com/fairgenomes/fairgenomes-semantic-model) ([van der Velde et al., 2022](https://www.nature.com/articles/s41597-022-01265-x)) and its nine core modules. Tailored for the Czech national biobank metadata catalogue, it extends the original sequencing focus by incorporating dedicated modules for physical biospecimen management, alongside radiological and whole slide imaging (WSI) data linked directly to biosamples and their donors.
 
+![BBDIMS Architecture](docs/bbdims_img.png)
+
 ## Explore
 
 Discover the full schema at the [interactive overview](generated/markdown/fairgenomes-semantic-model.md). 
